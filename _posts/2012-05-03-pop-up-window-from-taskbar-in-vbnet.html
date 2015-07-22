@@ -1,0 +1,95 @@
+---
+title: "POP-UP Window From Taskbar In VB.Net"
+layout: "post"
+permalink: "/2012/05/pop-up-window-from-taskbar-in-vbnet.html"
+uuid: "2275438588356464067"
+guid: "tag:blogger.com,1999:blog-102817447933978179.post-2275438588356464067"
+date: "2012-05-03 11:01:00"
+updated: "2012-09-07 12:14:16"
+description: 
+blogger:
+    siteid: "102817447933978179"
+    postid: "2275438588356464067"
+    comments: "4"
+categories: [vb.net]
+author: 
+    name: "Ravin Singh D"
+    url: "https://plus.google.com/105029459135081881791?rel=author"
+    image: "//lh6.googleusercontent.com/-qFoJPNzk8as/AAAAAAAAAAI/AAAAAAAAIdA/vGXqRFCleH4/s32-c/photo.jpg"
+---
+
+{% raw %}
+<div class="css-full-post-content js-full-post-content">
+<div dir="ltr" style="text-align: left;" trbidi="on">Today We are See about Pop the Forms from Task bar Using VB.Net<br /><br /><b>STEP 1:</b><br /><ol style="text-align: left;"><li>Open new project </li><li>Open New Form Names as Form1</li><li>Add Following Control to the form&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</li></ol><ul style="text-align: left;"><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 Timers</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 Button</li></ul><b>STEP 2:</b><br /><ol style="text-align: left;"><li>Set the form Border Style as None using properties &nbsp; </li><li>Set the form size As (223, 201) using Properties&nbsp;</li></ol><b>Step 3:&nbsp;</b><br /><ol style="text-align: left;"><li>Define variable i ,a,b as integer </li><li>In form Load event Just write the following code</li></ol><br /><div style="background-color: yellow; color: magenta;"><b>a= Screen.PrimaryScreen.Bounds.Width<br />&nbsp; &nbsp; &nbsp; &nbsp; b = Screen.PrimaryScreen.Bounds.Height<br />&nbsp; &nbsp; &nbsp; &nbsp; a= a - 227<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i = 25<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Timer1.Start()</b></div><br />&nbsp;&nbsp;&nbsp;&nbsp; 3.Then in Button 1 click event write following code<br /><br /><b>&nbsp;<span style="background-color: yellow; color: magenta;">Timer2.Start()</span></b><br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.Then in Timer 1 Tick Event Write The following Code<br /><br /><div style="color: magenta;">&nbsp;<b style="background-color: yellow;">If i &gt; 31 Then<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Timer1.Stop()<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End If<br />&nbsp; &nbsp; &nbsp; &nbsp; b = b- i<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Me.Location = New System.Drawing.Point(a, b)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i = i + 1</b></div><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.Then in timer 2 Tick Event Write the following code<br /><br />&nbsp;<b style="background-color: yellow; color: magenta;">If i &lt; 25 Then<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Timer2.Stop()<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Me.Close()<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End If<br />&nbsp; &nbsp; &nbsp; &nbsp; b= b + i<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Me.Location = New System.Drawing.Point(a, b)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i = i - 1</b><br /><br />Now Run Form The form will appear popup from task bar<br /><br />For Complete Solution file Download <a href="https://skydrive.live.com/redir?resid=DDDEF7B043CF9E7F!424" target="_blank">Here</a><br /><br />If any doubt Please feel free contact me at info@ravinsingh.in <br /><div><br /></div></div>
+</div>
+<div class="css-full-comments-content js-full-comments-content">
+<div class="css-full-comment js-full-comment">
+  <div class="css-comment-user-link js-comment-user-link">
+  <a href="https://www.blogger.com/profile/05859418296129261206">
+  <div class="css-comment-name js-comment-name">
+    Sushant Khot
+  </div>
+  </a>
+  <div class="css-comment-date js-comment-date">
+    2012-09-03T19:53:02.004Z
+  </div>
+  </div>
+  <div class="css-comment-content js-comment-content">
+    Private Sub Timer2_Tick()<br />        If i &lt; 25 Then<br />            Timer2.Stop()<br />            Me.Close()<br />        End If<br />        Label2.Text = Label2.Text + i<br />        Me.Location = New System.Drawing.Point(Label1.Text, Label2.Text)<br />        i = i - 1<br />    End Sub<br />--------&gt;&gt; Error &lt;&lt;----------<br />&quot;Label2.Text = Label2.Text + i&quot; &gt;&gt;--&gt;&gt;<br />Conversion from string &quot;&quot; to type &#39;Double&#39; is not valid.
+  </div>
+  <br/>
+</div>
+<div class="css-full-comment js-full-comment">
+  <div class="css-comment-user-link js-comment-user-link">
+  <a href="https://www.blogger.com/profile/17077764835186117718">
+  <div class="css-comment-name js-comment-name">
+    ravin singh
+  </div>
+  </a>
+  <div class="css-comment-date js-comment-date">
+    2012-09-07T08:18:58.394Z
+  </div>
+  </div>
+  <div class="css-comment-content js-comment-content">
+    Thank You for the correction.I update my code Please check it
+  </div>
+  <br/>
+</div>
+<div class="css-full-comment js-full-comment">
+  <div class="css-comment-user-link js-comment-user-link">
+  <a href="https://www.blogger.com/profile/05859418296129261206">
+  <div class="css-comment-name js-comment-name">
+    Sushant Khot
+  </div>
+  </a>
+  <div class="css-comment-date js-comment-date">
+    2012-09-08T21:42:59.441Z
+  </div>
+  </div>
+  <div class="css-comment-title js-comment-title">
+    ok.
+but Pop-Up windows not going after showing mes...
+  </div>
+  <div class="css-comment-content js-comment-content">
+    ok.<br />but Pop-Up windows not going after showing message in taskbar. this message show upto 2sec. after 2 sec. this message automatic close window.<br />so plz help..
+  </div>
+  <br/>
+</div>
+<div class="css-full-comment js-full-comment">
+  <div class="css-comment-user-link js-comment-user-link">
+  <a href="https://www.blogger.com/profile/17077764835186117718">
+  <div class="css-comment-name js-comment-name">
+    ravin singh
+  </div>
+  </a>
+  <div class="css-comment-date js-comment-date">
+    2012-09-10T03:48:09.929Z
+  </div>
+  </div>
+  <div class="css-comment-content js-comment-content">
+    i can&#39;t clearly understand your problem.please briefly descrip your problem or else contact me.my mobile no +917502495345
+  </div>
+  <br/>
+</div>
+</div>
+{% endraw %}

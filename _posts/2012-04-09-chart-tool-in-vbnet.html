@@ -1,0 +1,26 @@
+---
+title: "Chart tool in VB.Net"
+layout: "post"
+permalink: "/2012/04/chart-tool-in-vbnet.html"
+uuid: "2857840398883641007"
+guid: "tag:blogger.com,1999:blog-102817447933978179.post-2857840398883641007"
+date: "2012-04-09 23:11:00"
+updated: "2012-04-09 23:13:13"
+thumbnail: "http://4.bp.blogspot.com/-GdPGwRDhciQ/T4Nqs5WFzGI/AAAAAAAAAlA/XUdIXKjLl5U/s72-c/chart+in+visual+studio+2011.jpg"
+description: 
+blogger:
+    siteid: "102817447933978179"
+    postid: "2857840398883641007"
+    comments: "0"
+categories: [chart in vb.net]
+author: 
+    name: "Ravin Singh D"
+    url: "https://plus.google.com/105029459135081881791?rel=author"
+    image: "//lh6.googleusercontent.com/-qFoJPNzk8as/AAAAAAAAAAI/AAAAAAAAIdA/vGXqRFCleH4/s32-c/photo.jpg"
+---
+
+{% raw %}
+<div class="css-full-post-content js-full-post-content">
+<div dir="ltr" style="text-align: left;" trbidi="on">Now we are see about how to use the chart tool in vb.net<br />For that we need visual studio 2010 or 2011<br />1)create a empty form<br />2)Add chart control to the form<br /><br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-GdPGwRDhciQ/T4Nqs5WFzGI/AAAAAAAAAlA/XUdIXKjLl5U/s1600/chart+in+visual+studio+2011.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="179" src="http://4.bp.blogspot.com/-GdPGwRDhciQ/T4Nqs5WFzGI/AAAAAAAAAlA/XUdIXKjLl5U/s320/chart+in+visual+studio+2011.jpg" width="320" /></a></div><br />3)set the series name<br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-UzFtbL0QL4U/T4NqwQsOr1I/AAAAAAAAAlI/MYPia7z2XyE/s1600/chart+in+visual+studio+20111.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="179" src="http://4.bp.blogspot.com/-UzFtbL0QL4U/T4NqwQsOr1I/AAAAAAAAAlI/MYPia7z2XyE/s320/chart+in+visual+studio+20111.jpg" width="320" /></a></div>4)Then create one data base i choose ms access<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-FYtRRyDFVY0/T4Nqpr_LciI/AAAAAAAAAk4/TuClyWPt7j0/s1600/MS+access+2007.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="195" src="http://1.bp.blogspot.com/-FYtRRyDFVY0/T4Nqpr_LciI/AAAAAAAAAk4/TuClyWPt7j0/s320/MS+access+2007.JPG" width="320" /></a></div><br /><br />4) In page load event type the following code<br /><br />Imports System.Data.OleDb<br />Public Class Form1<br />&nbsp;&nbsp;&nbsp; Dim con As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\ravin\Desktop\college\sub.accdb")<br />&nbsp;&nbsp;&nbsp; Dim cmd As New OleDbCommand<br />&nbsp;&nbsp;&nbsp; Dim read As OleDbDataReader<br /><br />&nbsp;&nbsp;&nbsp; Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="background-color: yellow; color: magenta;">con.Close()</span><br /><div style="color: magenta;"><span style="background-color: yellow;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; con.Open()</span></div><div style="color: magenta;"><span style="background-color: yellow;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cmd = New OleDbCommand("select uname,mark from sub", con)</span></div><div style="color: magenta;"><span style="background-color: yellow;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; read = (cmd.ExecuteReader)</span></div><div style="color: magenta;"><span style="background-color: yellow;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; While (read.Read)</span></div><div style="color: magenta;"><span style="background-color: yellow;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chart1.Series("Student").Points.AddXY(read.GetValue(0), read.GetValue(1))</span></div><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End While<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chart1.Series("Student").ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chart1.Series("Student")("PieLabelStyle") = "Outside"<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chart1.ChartAreas("ChartArea1").Area3DStyle.Enable3D = True<br /><br />&nbsp;&nbsp;&nbsp; End Sub<br />End Class<br /><br /><br /><br /><br />5)Save the form then run<br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-zWbb2qadvfs/T4NsB8URA7I/AAAAAAAAAlQ/9c7TVg6HY08/s1600/chart+in+visual+studio+2011+run.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="179" src="http://1.bp.blogspot.com/-zWbb2qadvfs/T4NsB8URA7I/AAAAAAAAAlQ/9c7TVg6HY08/s320/chart+in+visual+studio+2011+run.jpg" width="320" /></a></div>If any doubt please feel free contact me my mail info@ravinsingh.in <br /><br /></div>
+</div>
+{% endraw %}
